@@ -96,3 +96,75 @@ body{
 	width:100px;
 	height:22px;
 }
+
+.top-nav-profile{
+	color: #A0B3C0;
+	cursor:pointer;
+	float:right;
+	width: 100px;
+	height: 45px;
+}
+.top-nav-profile:hover{
+	color:#fff;
+}
+.profile_image{
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	width: 25px;
+	height: 25px;
+	border: 1px solid rgba(0,0,0,.1);
+}
+.top-nav-userinfo{
+	width: 100px;
+	display: block;
+	text-indent: 46px;
+	position: relative;
+	color: #A0B3C0;
+	text-decoration: none;
+}
+
+.l_content_box{
+	float: left;
+	width: 720px;
+	border: 1px solid #888;
+	height: 700px;
+}
+
+.r_side_box{
+	float: right;
+	width: 220px;
+	border: 1px solid #888;
+	height: 700px;
+}
+
+.l_menu_box{
+	float: left;
+	width: 220px;
+	border: 1px solid #888;
+	height: 700px;
+}
+.r_content_box{
+	float: right;
+	width: 720px;
+	border: 1px solid #888;
+	height: 700px;
+}
+
+#footer_box{
+	margin-top: 50px;
+	height:50px;
+	background:url(../images/header.png);
+	width: 100%;
+}
+#footer{
+	margin: 0 auto;
+	width: 960px;
+	line-height: 50px;
+	color: #eee;
+}
+
+.input_name{
+	width:100px;
+	height:22px;
+}
