@@ -29,3 +29,12 @@ function getCookie(c_name){
 	   }    
 	   return "";
 }
+
+function _findEleInArray(elestr,arr){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==elestr){
+			return i;
+		}
+	}
+	return -1;
+}

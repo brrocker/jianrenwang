@@ -71,3 +71,46 @@ body{
 .button_S:active{
 	background-position: 0px -100px;
 }
+
+
+
+.btn_sty1{
+	background: #8ab923;
+	background-color: #9dcc4a;
+	background-image: -moz-linear-gradient(top,#adda4d,#86b846);
+	background-image: -ms-linear-gradient(top,#adda4d,#86b846);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#adda4d),to(#86b846));
+	background-image: -webkit-linear-gradient(top,#adda4d,#86b846);
+	background-image: -o-linear-gradient(top,#adda4d,#86b846);
+	background-image: linear-gradient(top,#adda4d,#86b846);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#adda4d', endColorstr='#86b846', GradientType=0);
+	text-shadow: 0 1px 0 rgba(255,255,255,.3);
+	border: 1px solid #6d8f29;
+	color: #3e5e00!important;
+	min-width: 78px;
+	width: auto;
+	_width: 78px;
+	box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,0 1px 0 rgba(0,0,0,.2);
+}
+
+.btn_sty1:hover{
+	background-image: -webkit-linear-gradient(top,#D0F387,#98C959);
+}
+
+.btn_search {
+	text-align: center;
+	min-width: 90px;
+	font-size: 12px;
+	text-decoration: none!important;
+	padding: 1px;
+	font-weight: 400;
+	line-height: 28px;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-left: 10px;
+}

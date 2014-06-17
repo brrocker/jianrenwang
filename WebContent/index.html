@@ -7,8 +7,11 @@
 
 	<link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/pages.css">
+    <link rel="stylesheet" type="text/css" href="css/contents.css">
     
+	<script type="text/javascript" src="jslib/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/util.js"></script>
+	<script type="text/javascript" src="js/shouye.js"></script>
 </head>
 <body>
 
@@ -33,7 +36,44 @@
 <div id="center_box">
     
     <!--left_box-->
-   	<div class="l_content_box"></div>
+   	<div class="l_content_box">
+   		<div class="search_box" id="">
+   			<div class="search_dropdown">
+   				<!-- dropdown content here -->
+   				<div class="search_drop_row" etype="city">
+   					<div class="search_drop_title">城市</div>
+   					<div class="search_drop_ele">南京</div>
+   					<div class="search_drop_ele">上海</div>
+   					<div class="search_drop_ele">北京</div>
+   				</div>
+   				<div class="seperator_line"></div>
+   				<div class="search_drop_row" etype="area">
+   					<div class="search_drop_title">行业</div>
+   					<div class="search_drop_ele">运输</div>
+   					<div class="search_drop_ele">教育</div>
+   					<div class="search_drop_ele">IT</div>
+   				</div>
+   				<div class="seperator_line"></div>
+   				<div class="search_drop_row" etype="position">
+   					<div class="search_drop_title">职位</div>
+   					<div class="search_drop_ele">经理</div>
+   					<div class="search_drop_ele">前台</div>
+   					<div class="search_drop_ele">运维</div>
+   					<div class="search_drop_ele">销售</div>
+   					<div class="search_drop_ele">后勤</div>
+   					<div class="search_drop_ele">支持</div>
+   					<div class="search_drop_ele">总管</div>
+   					<div class="search_drop_ele">客服</div>
+   					<div class="search_drop_ele">工人</div>
+   					<div class="search_drop_ele">策划</div>
+   					<div class="search_drop_ele">质量监测</div>
+   				</div>
+   			</div>
+   			<input class="search_input"></input>
+   			<button class="btn_search btn_sty1">搜索</button>
+   		</div>
+   		
+   	</div>
    	
    	<!--right_box-->
    	<div class="r_side_box"></div>
