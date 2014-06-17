@@ -9,7 +9,9 @@
 		<create javascript="Text" creator="spring">
 			<param name="beanName" value="text_dwr"></param>
 		</create>
-		
+		<create javascript="Resume" creator="spring">
+			<param name="beanName" value="resume_dwr"></param>
+		</create>
 		<convert converter="bean" match="com.jianrenwang.data.pojo.*"/>
 	</allow>
 </dwr>
