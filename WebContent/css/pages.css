@@ -72,7 +72,7 @@ body{
 }
 #header{
 	margin:0 auto;
-	width:960px;
+	width:1020px;
 	line-height:45px;
 }
 .menu_item{
@@ -89,7 +89,7 @@ body{
 }
 #center_box{
 	margin:0 auto;
-	width:960px;
+	width:1020px;
 	margin-top: 45px;
 	padding-top: 5px;
 }
@@ -127,29 +127,35 @@ body{
 
 .l_content_box{
 	float: left;
-	width: 720px;
+	width: 700px;
 	border: 1px solid #888;
-	height: 700px;
+	height: 900px;
+	background: white;
+	padding: 15px 20px;
 }
 
 .r_side_box{
 	float: right;
-	width: 220px;
+	width: 260px;
 	border: 1px solid #888;
-	height: 700px;
+	height: 900px;
+	background: white;
 }
 
 .l_menu_box{
 	float: left;
-	width: 220px;
+	width: 260px;
 	border: 1px solid #888;
-	height: 700px;
+	height: 900px;
+	background: white;
 }
 .r_content_box{
 	float: right;
-	width: 720px;
+	width: 700px;
 	border: 1px solid #888;
-	height: 700px;
+	height: 900px;
+	padding: 15px 20px;
+	background: white;
 }
 
 #footer_box{
