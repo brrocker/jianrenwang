@@ -40,6 +40,7 @@
 			<list>
 				<value>com.jianrenwang.data.pojo.Account</value>
 				<value>com.jianrenwang.data.pojo.Text</value>
+				<value>com.jianrenwang.data.pojo.Resume</value>
 			</list>
 		</property>		
 		
