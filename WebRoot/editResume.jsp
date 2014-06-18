@@ -417,7 +417,7 @@
 									style="width: 174px; visibility: hidden;" message="选择简历隐私状态">
 									<option value="" selected="">请选择</option>
 									<option value="0" class="status0">观望中</option>
-									<option value="1" class="status1">求内推</option>
+									<option value="1" class="status1">求推荐</option>
 									<option value="-1" class="status-1">勿扰我</option>
 
 								</select>
@@ -431,7 +431,7 @@
 										<div class="dsl_cont">
 											<p>请选择</p>
 											<p>观望中</p>
-											<p>求内推</p>
+											<p>求推荐</p>
 											<p>勿扰我</p>
 										</div>
 									</div>
