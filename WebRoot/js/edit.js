@@ -4,6 +4,15 @@ $(document).ready(function(){
 		$(list).slideToggle(200);
 	});
 	
+	$(".ds_list > .dsl_cont > p").hover(
+		function () {
+			$(this).addClass("selected");
+		},
+		function () {
+			$(this).removeClass("selected");
+		}
+	);
+	
 	$(".ds_list > .dsl_cont > p").click(function(){
 		var text = $(this).html();
 		var titileDiv = $(this).parent().parent().parent().find(".ds_title");
