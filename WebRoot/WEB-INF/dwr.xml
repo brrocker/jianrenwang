@@ -12,7 +12,7 @@
 		<create javascript="Resume" creator="spring">
 			<param name="beanName" value="resume_dwr"></param>
 		</create>
-		<create javascript="Job" creator="spring">
+		<create javascript="Jobdwr" creator="spring">
 			<param name="beanName" value="job_dwr"></param>
 		</create>
 		<convert converter="bean" match="com.jianrenwang.data.pojo.*"/>

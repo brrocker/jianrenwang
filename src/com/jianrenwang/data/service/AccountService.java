@@ -45,6 +45,7 @@ public class AccountService {
 		if (MD5.compute(password).equals(account.getPassword())) {
 			session.setAttribute(Constants.SESSION_ID, account.getId());
 			session.setAttribute(Constants.SESSION_NAME, account.getUsername());
+			session.setAttribute(Constants.USER_CLASS, account);
 			j.put("result", true);
 			j.put("message", "成功登录");
 			j.put("cookie", MD5.compute(account.getId()+":"+account.getPassword()));
@@ -67,6 +68,7 @@ public class AccountService {
 		if(value.equals(md5value)) {
 			session.setAttribute(Constants.SESSION_ID, account.getId());
 			session.setAttribute(Constants.SESSION_NAME, account.getUsername());
+			session.setAttribute(Constants.USER_CLASS, account);
 			return "success";
 		} else {
 			return "fail";
@@ -99,6 +101,7 @@ public class AccountService {
 		HttpSession session = WebContextFactory.get().getSession();
 		session.removeAttribute(Constants.SESSION_ID);
 		session.removeAttribute(Constants.SESSION_NAME);
+		session.removeAttribute(Constants.USER_CLASS);
 		return true;
 	}
 

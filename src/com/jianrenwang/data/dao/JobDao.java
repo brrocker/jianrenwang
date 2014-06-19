@@ -62,4 +62,12 @@ public class JobDao {
 		
 		return query.list();
 	}
+	
+	public List<Job> getJobsBySearch() {
+		Query query = sessionFactory.getCurrentSession().createQuery(
+		"from Job order by createtime");
+		//query.setParameter("city", "");
+		
+		return query.list();
+	}
 }

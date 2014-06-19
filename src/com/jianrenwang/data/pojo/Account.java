@@ -13,6 +13,7 @@ public class Account {
 
 	private String username;
 	private String password;
+	private String showname;
 	
 	@Id
 	@Column(length = 32)
@@ -35,6 +36,12 @@ public class Account {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getShowname() {
+		return showname;
+	}
+	public void setShowname(String showname) {
+		this.showname = showname;
 	}
 	
 	
