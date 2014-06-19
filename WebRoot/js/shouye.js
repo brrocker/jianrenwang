@@ -61,7 +61,7 @@ $(document).ready(function(){
 							'<img src="http://q.qlogo.cn/qqapp/101016468/EEF8E24835329D1A33C5900E5F5A471F/100" width="50" class="icon" alt="lemon"></div>' +
    				'<div class="jobRowRight">'+
    					'<div class="title"><span class="perName">'+
-   					job.publisherName + '</span>&nbsp;发布了&nbsp;<span class="jobName">'+
+   					job.publisherName + '</a></span>&nbsp;发布了&nbsp;<span class="jobName"><a href="jobDetail.jsp?jobid='+job.id +'" target="blank">'+
    					job.position + '</span></div>'+
    					'<div class="prize">推荐奖 ：<span class="brprice">'+
    						'2100元</span> <span class="note">&nbsp;&nbsp;•&nbsp;&nbsp;</span> 被推荐奖 ：<span class="brprice">900元</span> <span class="note">&nbsp;&nbsp;•&nbsp;&nbsp;</span> 自荐奖：<span class="brprice">3000元</span></a>'+

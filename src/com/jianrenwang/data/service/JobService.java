@@ -58,6 +58,10 @@ public class JobService {
 		return true;
 	}
 	
+	public Job getJobById (String id) {
+		return jobDao.getJobById(id);
+	}
+	
 	public String getJobsByPublisherID(String id) {
 		List<Job> jobls = jobDao.getJobsByPublisherID(id);
 		JSONObject jo = new JSONObject();
