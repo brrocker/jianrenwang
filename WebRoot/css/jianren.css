@@ -231,7 +231,7 @@
 .resumeviewer .resumecontent_cap h2 span{color:#333;padding-right:10px}.resumeviewer .resumecontent_cap .back_list{float:left;display:inline;margin:30px 0 0 10px;height:30px;line-height:40px;border-left:2px solid #91c2d4;font-size:17px;padding-left:10px;font-weight:bold}
 .resumeviewer .resumecontent_cap .back_list a{text-decoration:none}.resumeviewer .resumecontent_cap .back_list a:link{color:#91c2d4}.resumeviewer .resumecontent_cap .back_list a:hover,.resumeviewer .resumecontent_cap .back_list a:focus,.resumeviewer .resumecontent_cap .back_list a:focus{color:#1f90de;text-decoration:none}
 .resumeviewer .resumecontent_cap .back_list a:visited{color:#91c2d4}.resumeviewer .resumecontent_cap .status{position:absolute;z-index:1000;left:auto;top:32px;right:0;bottom:auto;zoom:1;font-size:20px;color:#3c7fa5;border-bottom:1px solid #ccc;text-align:right;height:26px;line-height:26px;width:190px}
-.resumeviewer .resumecontent_cap .edit{float:left;display:inline;margin:42px 0 0 35px;background:url("../images/icon.png") 0 -575px no-repeat;padding-left:22px}
+.resumeviewer .resumecontent_cap .edit{float:left;display:inline;margin:25px 0 0 35px;background:url("../images/icon.png") 0 -575px no-repeat;padding-left:22px}
 .resumeviewer .resumecontent_cap .edit a{text-decoration:none}.resumeviewer .resumecontent_cap .edit a:link{color:#1f90de}.resumeviewer .resumecontent_cap .edit a:hover,.resumeviewer .resumecontent_cap .edit a:focus,.resumeviewer .resumecontent_cap .edit a:focus{color:#1f90de;text-decoration:none}
 .resumeviewer .resumecontent_cap .edit a:visited{color:#1f90de}.resumeviewer .resumecontent_cap .download{background:url("../images/icon.png") 0 -950px no-repeat}
 .resumeviewer .resumecontent_head{margin-top:10px;height:190px;overflow:hidden}.resumeviewer .resumecontent_head .resumecontent_head_l{float:left;display:inline;width:405px;height:190px;padding-left:10px;background:url("../../../images/dot.png") 0 100% repeat-x}
@@ -327,3 +327,6 @@
 .maincontent{text-align:center;background:white}
 .edit_mid_container{text-align:left;}
 #btnResume{float:right}
+dl,.resumecontent_body{
+text-align: left;
+}

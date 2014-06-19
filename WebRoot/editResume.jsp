@@ -1,4 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="com.jianrenwang.commonservice.Constants"%>
+<%@page import="org.springframework.context.ApplicationContext"%>
+<%@page
+	import="org.springframework.web.context.support.WebApplicationContextUtils"%>
+<%@page import="com.jianrenwang.data.service.ResumeService"%>
+<%@page import="com.jianrenwang.data.pojo.Resume"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -12,12 +18,6 @@
 <base href="<%=basePath%>" />
 
 <title>更新简历,见人网</title>
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="cache-control" content="no-cache" />
-<meta http-equiv="expires" content="0" />
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
-<meta http-equiv="description" content="This is my page" />
-
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/pages.css" />
 <link rel="stylesheet" type="text/css" href="css/jianren.css" />
@@ -25,38 +25,44 @@
 
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="jslib/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/edit.js"></script>
 <script type='text/javascript' src='dwr/engine.js'></script>
-<script type='text/javascript' src='dwr/interface/Resume.js'></script>
 <script type="text/javascript" src="jslib/json2.js"></script>
+<script type="text/javascript" src="js/editCommon.js"></script>
+<script type='text/javascript' src='dwr/interface/Resume.js'></script>
+<script type='text/javascript' src='js/resumeManager.js'></script>
+<script type="text/javascript" src="js/page_editResume.js"></script>
 
+<%
+	String accountid = (String) session
+			.getAttribute(Constants.SESSION_ID);
+
+	ApplicationContext ctx = WebApplicationContextUtils
+			.getRequiredWebApplicationContext(this.getServletConfig()
+					.getServletContext());
+	ResumeService resumeService = (ResumeService) ctx
+			.getBean("resumeService");
+	Resume resume = resumeService.getResume();
+	if (resume == null) {
+		resume = new Resume();
+	}
+%>
+<script type="text/javascript">
+	var accountid = "<%=accountid%>";
+	if (accountid == "null") {
+		window.location.href = "index.jsp";
+	}
+</script>
 </head>
 <body>
 
-	<div id="header_box">
-		<div id="header">
-			<!-- menu options-->
-			<div class="menu_item">首页</div>
-			<div class="menu_item">发布职位</div>
-			<div class="menu_item">搜索简历</div>
-			<!--options end-->
-
-			<div class="top-nav-profile">
-				<a href="#" class="top-nav-userinfo" id=""> <span class="name">肖奕</span>
-					<img class="profile_image" src="images/profile_image.jpg" />
-				</a>
-				<ul class="top-nav-dropdown" id="top-nav-profile-dropdown">
-				</ul>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="frameheader.jsp"></jsp:include>
 	<div id="center_box">
 
 		<div class="maincontent" style="min-height: 11px;">
 			<div class="edit_mid_container">
 
 				<h2>
-					肖奕 &nbsp&nbsp&nbsp<span class="tips"
+					<%=resume.getRealName() %> &nbsp&nbsp&nbsp<span class="tips"
 						style="background-position: 30px -491px; color: #52b848;">更新在线简历，让其他见人发现你。</span>
 				</h2>
 
@@ -73,19 +79,19 @@
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
 									<input id="realname" class="w328 required inp valid"
-										type="text" name="realname" value="" message="姓名由文字字母组成" /><span
+										type="text" name="realname" value="<%=resume.getRealName() %>" message="姓名由文字字母组成" /><span
 										class="online_resume_tips"
 										style="width: 337px; left: 105px; display: none">姓名由文字字母组成</span>
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
 									<input id="mobile" class="w328 required mobile inp" type="text"
-										name="mobile" value="" message="请输入正确的手机号" />
+										name="mobile" value="<%=resume.getMobile() %>" message="请输入正确的手机号" />
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
 									<input id="email" class="w328 required email inp" type="text"
-										name="email" value="" message="请输入正确的邮箱" />
+										name="email" value="<%=resume.getEmail() %>" message="请输入正确的邮箱" />
 								</div>
 								<div class="online_resume_item"
 									style="z-index: 100; position: relative;">
@@ -93,7 +99,7 @@
 									<div id="ageDiv" class="selectView selectView_mini"
 										style="width: 350px; position: absolute; left: 105px; top: 0px;">
 										<div class="ds_cont">
-											<div class="ds_title" value="">请选择</div>
+											<div class="ds_title" value="<%=resume.getBirthyear() %>"><%=resume.getBirthyear() %></div>
 											<div class="ds_button"></div>
 										</div>
 										<div class="ds_list" style="display: none;">
@@ -173,24 +179,24 @@
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>当前公司</label> <input
 										id="" class="w200 required inp" type="text"
-										name="currentcompany" value="" message="不能为空，学生填当前学校" />
+										name="currentcompany" value="<%=resume.getCurrentcompany() %>" message="不能为空，学生填当前学校" />
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>工作年限</label> <input
 										id="" class="w200 required number inp" type="text"
-										name="workage" value="" message="工作年限不能为空，学生填0" />
+										name="workage" value="<%=resume.getWorkage() %>" message="工作年限不能为空，学生填0" />
 								</div>
 							</div>
 							<div class="online_resume_cont_r w_half">
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>当前职位</label> <input
 										id="" class="w200 required inp" type="text" name="currentjob"
-										value="" message="不能为空，学生填学生" />
+										value="<%=resume.getCurrentjob() %>" message="不能为空，学生填学生" />
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>所在城市</label> <input
 										id="" class="w200 required inp" type="text" name="city"
-										value="" message="所在城市不能为空" />
+										value="<%=resume.getCity() %>" message="所在城市不能为空" />
 								</div>
 							</div>
 						</div>
@@ -210,7 +216,7 @@
 										class="nt_rich_editor_operation nt_rich_editor_add_bullets">添加项目符号</a>
 								</div>
 								<textarea id="experience" name="experience"
-									class="nt_rich_editor_content inp"></textarea>
+									class="nt_rich_editor_content inp" value="<%=resume.getExperience() %>"></textarea>
 							</div>
 							<!-- <script id="editor" type="text/plain" style="width:672px;height:300px;"></script> -->
 							<!-- <textarea id="editorContent" name="experience" style="display:none;"></textarea> -->
@@ -247,6 +253,8 @@
 									<!--                  -->
 									<div id="education_div_0" class="selectView selectView_mini"
 										style="width: 130px; position: absolute; left: 0px; top: 0px;">
+										
+<!--  String[] eduArr= resume.getEducation().split --> 
 										<div class="ds_cont">
 											<div class="ds_title" value="">请选择</div>
 											<div class="ds_button"></div>
@@ -446,8 +454,8 @@
 									<div class="online_resume_input" index="0">
 										<input id="0" class="w134 inp" style="padding-right: 28px;"
 											type="text" name="forbiddomain[0]" value=""
-											placeholder="如：baidu.com"/> <a
-											class="online_resume_cancel" href="javascript:void(0)"
+											placeholder="如：baidu.com" /> <a class="online_resume_cancel"
+											href="javascript:void(0)"
 											onclick="jianren_resume_removeforbiddomain(this)"
 											style="display: none"></a>
 									</div>
@@ -468,8 +476,7 @@
 					</div>
 					<div class="online_resume_blk">
 						<input type="hidden" id="click" name="click" value="1" /> <input
-							type="button" id="btnResume"
-							value="保存" />
+							type="button" id="btnResume" value="保存" />
 					</div>
 				</div>
 			</div>
@@ -479,10 +486,6 @@
 
 	</div>
 
-	<div id="footer_box">
-		<div id="footer">
-			<div>见人网：备案号：。。。。 关于我们。。。。。。 版权所有....</div>
-		</div>
-	</div>
+	<jsp:include page="framefooter.jsp"></jsp:include>
 </body>
 </html>

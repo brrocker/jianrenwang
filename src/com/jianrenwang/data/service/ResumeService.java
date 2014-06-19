@@ -31,5 +31,19 @@ public class ResumeService {
 			return j.toString();
 		}
 	}
+	
+	public Resume getResume(){
+		//HttpSession session = WebContextFactory.get().getSession();
+		//String username = session.getAttribute(Constants.SESSION_NAME);
+		//if username == null, redirect to index page
+		
+		//TODO change to use above logic: get userName from user session
+		Resume resume = resumeDao.getResumeByAccountID("abcdefghijklmnopqrstuvwxyz123456");
+		if(resume==null){
+			resume = new Resume();
+			saveResume(resume);
+		}
+		return resume;
+	}
 
 }

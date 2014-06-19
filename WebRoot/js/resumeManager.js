@@ -1,42 +1,9 @@
+/**
+ * resume manager, need load Resume.js first
+ */
 $(document).ready(function(){
-	$(".selectView").click(function(){
-		var list = $(this).find(".ds_list").get(0);
-		$(list).slideToggle(200);
-	});
 	
-	$(".ds_list > .dsl_cont > p").hover(
-		function () {
-			$(this).addClass("selected");
-		},
-		function () {
-			$(this).removeClass("selected");
-		}
-	);
-	
-	$(".ds_list > .dsl_cont > p").click(function(){
-		var text = $(this).html();
-		var titileDiv = $(this).parent().parent().parent().find(".ds_title");
-		titileDiv.html(text);
-		var defaultText = $(this).parent().find("p").html();
-		console.log("default value =" + defaultText);
-		if(text == defaultText){
-			text = "";
-		}
-		titileDiv.attr("value",text);
-	});
-	
-	$("#btnResume").click(updateResume);
-	
-	function checkFileds(){
-		//对输入进行正则校验
-		//校验大于0的整数
-		var workage = $("input[name='workage']").val();
-		var salary = $("#salary").val();
-		var numPattern=/^[1-9]{1}[0-9]*$/;
-		return numPattern.test(workage) && numPattern.test(salary);
-	}
-	
-	function updateResume(){
+	Resume.uploadResume = function(){
 		console.log("update resume");
 		if(!checkFileds()){
 			alert("输入有误");
@@ -96,7 +63,7 @@ $(document).ready(function(){
 			privatestatus:privatestatus,
 			portfolio:portfolio,
 			gam:gam,
-			salary:salary
+			salary:salary,
 		};
 		
 		var func = function(data){
@@ -104,5 +71,6 @@ $(document).ready(function(){
 		};
 		
 		Resume.saveResume(resume,func);
-	}
+	};
+	
 });
