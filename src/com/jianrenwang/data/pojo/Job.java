@@ -21,13 +21,15 @@ public class Job {
 	private String id;
 	
 	private String publisherID;
-	private String name;
+	private String publisherName;
+	private String position;
+	private String city;
 	private String workplace;
 	private String company;
 	private String department;
 	private String mailAddr;
-	private Double salaryLow;
-	private Double salaryHigh;
+	private Double beginsalary;
+	private Double endsalary;
 	private String detail;
 	
 	private String createtime;
@@ -49,12 +51,6 @@ public class Job {
 	}
 	public void setPublisherID(String publisherID) {
 		this.publisherID = publisherID;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getWorkplace() {
 		return workplace;
@@ -80,18 +76,6 @@ public class Job {
 	public void setMailAddr(String mailAddr) {
 		this.mailAddr = mailAddr;
 	}
-	public Double getSalaryLow() {
-		return salaryLow;
-	}
-	public void setSalaryLow(Double salaryLow) {
-		this.salaryLow = salaryLow;
-	}
-	public Double getSalaryHigh() {
-		return salaryHigh;
-	}
-	public void setSalaryHigh(Double salaryHigh) {
-		this.salaryHigh = salaryHigh;
-	}
 	public String getDetail() {
 		return detail;
 	}
@@ -115,6 +99,36 @@ public class Job {
 	}
 	public void setState(int state) {
 		this.state = state;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public Double getBeginsalary() {
+		return beginsalary;
+	}
+	public void setBeginsalary(Double beginsalary) {
+		this.beginsalary = beginsalary;
+	}
+	public Double getEndsalary() {
+		return endsalary;
+	}
+	public void setEndsalary(Double endsalary) {
+		this.endsalary = endsalary;
+	}
+	public String getPublisherName() {
+		return publisherName;
+	}
+	public void setPublisherName(String publisherName) {
+		this.publisherName = publisherName;
 	}
 	
 }

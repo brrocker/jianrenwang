@@ -2,6 +2,7 @@ package com.jianrenwang.dwr;
 
 import javax.annotation.Resource;
 
+import org.directwebremoting.WebContextFactory;
 import org.directwebremoting.annotations.Param;
 import org.directwebremoting.annotations.RemoteMethod;
 import org.directwebremoting.annotations.RemoteProxy;
@@ -37,5 +38,10 @@ public class JobDwr {
 	@RemoteMethod
 	public String getJobsByPublisherID(String userId) {
 		return jobService.getJobsByPublisherID(userId);
+	}
+	
+	@RemoteMethod
+	public String getJobsBySearch() {
+		return jobService.getJobsBySearch();
 	}
 }

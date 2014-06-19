@@ -12,7 +12,7 @@
 	
 	<script type='text/javascript' src='dwr/engine.js'></script>
 	<script type='text/javascript' src='dwr/util.js'></script>
-	<script type='text/javascript' src='dwr/interface/Job.js'></script>
+	<script type='text/javascript' src='dwr/interface/Jobdwr.js'></script>
 	<script type="text/javascript" src="jslib/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="jslib/json2.js"></script>
 	
@@ -33,24 +33,8 @@ if(accountid == "null") {
 }
 </script>
 <body>
-<div id="header_box">
-	<div id="header">
-    	<!-- menu options-->
-        <div class="menu_item">首页</div>
-        <div class="menu_item">发布职位</div>
-        <div class="menu_item">搜索简历</div>
-        <!--options end-->
-        
-        <div class="top-nav-profile">
-			<a href="#" class="top-nav-userinfo" id="">
-				<span class="name">肖奕</span>
-				<img class="profile_image" src="images/profile_image.jpg">
-			</a>
-			<ul class="top-nav-dropdown" id="top-nav-profile-dropdown">
-			</ul>	
-		</div>
-    </div>
-</div>
+<jsp:include page="frameheader.jsp"></jsp:include>
+
 <div id="center_box">
     
     <!--left_box-->
@@ -65,42 +49,40 @@ if(accountid == "null") {
    		<!-- jobListBox -->
    		<div class="jobForm">
    			<table width="100%" cellpadding="1" cellspacing="1" class="t_value">
-            <tbody><tr>
+            <tbody>
+            <tr>
                 <th width="17%" scope="row">岗位</th>
                 <td width="83%">
-                  <input type="text" maxlength="30" size="40" id="position" class="required inp" name="position" value="">
+                  <input id="position" type="text" maxlength="30" size="40" class="required inp" value="">
                 </td>
             </tr>
             <tr>
-                <th scope="row">详细工作地点</th>
+                <th scope="row">城市</th>
                 <td>
-                  <input type="text" maxlength="60" size="40" id="city" class="required inp" name="city" value="">
+                  <input id="city" type="text" maxlength="60" size="40" class="required inp" value="">
                 <em style="color:#fe9728;padding-left:10px"></em></td>
             </tr>
-<!--    -->
-    <tr>  
-       <th scope="row">公司</th>
-       <td>
-       <input name="company" type="text" class="required inp" id="company" value="" maxlength="30" style="width:110px;">
-       <span class="btitle">　部门</span>　 
-       <input name="department" type="text" class="required inp" id="department" value="" maxlength="30" style="width:135px;">
-       </td>
-    </tr>
-<!--      -->
+		    <tr>  
+		       <th scope="row">公司</th>
+		       <td>
+		       <input id="company"type="text" class="required inp"  value="" maxlength="30" style="width:110px;">
+		       <span class="btitle">　部门</span>　 
+		       <input id="department" type="text" class="required inp" value="" maxlength="30" style="width:135px;">
+		       </td>
+		    </tr>
             <tr>
                 <th scope="row">接收简历邮箱</th>
                 <td>
-                  <input type="text" placeholder="多个邮箱之间以逗号分隔" maxlength="60" size="40" id="recievemail" class="required email inp" name="recievemail" value="brrocker@tempinbox.com">
-                  <span style="display:block;padding-top:5px;color:#999">多个邮箱之间以逗号分隔</span>
+                  <input id="mailAddr" type="text" maxlength="60" size="40" class="required email inp" value="brrocker@tempinbox.com">
                 </td>
             </tr>
             <tr>  
                <th scope="row">月薪</th>
                <td id="monthlyPay">
                 <div style="display:inline-block">
-                 <input name="beginsalary" type="text" class="required inp" id="beginsalary" value="" style="width:30px;text-align:right"> k
+                 <input id="beginsalary" type="text" class="required inp" value="" style="width:30px;text-align:right"> k
                  <span class="btitle"> &nbsp;&nbsp;~ </span>　 
-                 <input name="endsalary" type="text" class="required inp" id="endsalary" value="" style="width:30px;text-align:right"> k
+                 <input id="endsalary" type="text" class="required inp" value="" style="width:30px;text-align:right"> k
                 </div><em style="color:#fe9728;padding-left:10px"></em>
                </td>
             </tr>
@@ -108,12 +90,7 @@ if(accountid == "null") {
                 <th scope="row">职位详情</th>
                 <td>
                   <div class="NT_Textarea_Wrap">
-                    <div class="NT_Handler clearfix">
-                      <div class="NT_Pictures_Upload_Wrap"><a href="javascript:;" class="NT_Pictures_Uploader bluea" onclick="Lcp.uploadPics('/index.php?name=neitui&amp;handle=neituiimgupload',null, '添加图片')">+ 添加图片</a></div>
-                      <span class="vline"></span>
-                      <div class="NT_Videos_Upload_Wrap"><a href="javascript:;" class="NT_Pictures_Uploader bluea" onclick="Lcp.uploadVideos(null, '添加视频')">+ 添加视频</a></div>
-                    </div>
-                    <textarea placeholder="重要的信息放在前面；尽量给出福利待遇； 准确描述职位相关信息。" style="width:505px;height:300px;padding-top:35px;resize:none;" id="detail" rows="20" name="detail" class="inp"></textarea>
+                    <textarea  id="detail" rows="20" class="inp" placeholder="重要的信息放在前面；尽量给出福利待遇； 准确描述职位相关信息。" style="width:505px;height:300px;padding-top:35px;resize:none;"></textarea>
                   </div>
                 </td>
             </tr>
@@ -122,7 +99,7 @@ if(accountid == "null") {
                 <th scope="row">&nbsp;</th>
                 <td>
                   <input type="hidden" value="1" id="click" name="click">
-                  <input type="button" value="发 布" id="btnJobSave" name="btnJobSave" class="btn_sty1">
+                  <input type="button" value="发 布" id="btnJobSave" class="btn_sty1">
                 </td>
             </tr>
             <tr>
@@ -148,10 +125,6 @@ if(accountid == "null") {
     
 </div>
 
-<div id="footer_box">
-	<div id="footer">
-		<div>见人网：备案号：。。。。  关于我们。。。。。。 版权所有....</div>
-	</div>
-</div>
+<jsp:include page="framefooter.jsp"></jsp:include>
 </body>
 </html>
