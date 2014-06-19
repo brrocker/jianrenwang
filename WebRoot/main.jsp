@@ -87,7 +87,7 @@ if(accountid == "null") {
    		
    		<!-- jobListBox -->
    		<div class="jobListBox">
-   			<div class="jobRow">
+   			<!-- <div class="jobRow">
    				<div class="jobRowLeft">
    					<img src="http://q.qlogo.cn/qqapp/101016468/EEF8E24835329D1A33C5900E5F5A471F/100" width="50" class="icon" alt="lemon">
    				</div>
@@ -111,32 +111,7 @@ if(accountid == "null") {
 						4、熟悉android 、iso等平台的应用规范。
    					</div>
    				</div>
-   			</div>
-   			<div class="jobRow">
-   				<div class="jobRowLeft">
-   					<img src="http://q.qlogo.cn/qqapp/101016468/EEF8E24835329D1A33C5900E5F5A471F/100" width="50" class="icon" alt="lemon">
-   				</div>
-   				<div class="jobRowRight">
-   					<div class="title"><span class="perName">lemon</span>&nbsp;发布了&nbsp;<span class="jobName">UI设计师</span></div>
-   					<div class="prize">
-   						推荐奖 ：<span class="brprice">2100元</span> <span class="note">&nbsp;&nbsp;•&nbsp;&nbsp;</span> 被推荐奖 ：<span class="brprice">900元</span> <span class="note">&nbsp;&nbsp;•&nbsp;&nbsp;</span> 自荐奖：<span class="brprice">3000元</span></a>
-   					</div>
-   					<div class="jobInfo">
-		              	公司：<a href="#" target="_blank" title="珍爱网">珍爱网网站部</a> <span class="note">&nbsp;&nbsp;•&nbsp;&nbsp;</span> 
-		             	地点：<a href="#" target="_blank">深圳-南山区</a> <span class="note">&nbsp;&nbsp;•&nbsp;&nbsp;</span> 
-		              	月薪：9k ~ 14k
-   					</div>
-   					<div class="jobDescript">
-   						公司有专业的设计开发团队，广阔的个人发展空间。需要有创新的思维模式，良好的执行力，思维敏捷。
-
-						职位要求:  
-						1、艺术设计或工业设计本科以上学历，专职手机客户端UI设计或手机网站设计2年以上经验。 
-						2、精通Photoshop、Painter、OC、AI、Coreldraw等，有一定手绘能力，能熟练使用手写板进行创作；
-						3、对移动终端人机交互、图形化设计、界面设计和其他相关理论有比较系统的认识。 
-						4、熟悉android 、iso等平台的应用规范。
-   					</div>
-   				</div>
-   			</div>
+   			</div> -->
    		</div>
    		
    	</div>
