@@ -152,3 +152,8 @@ table.t_value th {
 	padding: 10px;
 	color: #333333;
 }
+
+#userinfo .info{
+	margin-left:20px;
+	margin-bottom: 10px;
+}

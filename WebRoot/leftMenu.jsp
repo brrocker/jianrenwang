@@ -10,8 +10,8 @@
 					alt="xy" class="icon"
 					src="http://q.qlogo.cn/qqapp/101016468/B9F88A6D4CB9C26E67998CE835DBDCEE/100">
 				</a>
+				<span>xy</span>
 			</div>
-			<div class="det">xy</div>
 		</div>
 		<div class="l_menu_list">
 			<div id="neitui" class="selected">
