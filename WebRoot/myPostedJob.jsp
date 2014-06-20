@@ -39,7 +39,9 @@ if(accountid == "null") {
 <div id="center_box">
     
     <!--left_box-->
-   	<div class="l_menu_box"></div>
+   	<div class="l_menu_box">
+   		<jsp:include page="leftMenu.jsp"></jsp:include>
+   	</div>
    	
    	<!--right_box-->
    	<div class="r_content_box">

@@ -144,10 +144,11 @@ body{
 
 .l_menu_box{
 	float: left;
-	width: 260px;
+	width: 220px;
 	border: 1px solid #888;
 	height: 900px;
 	background: white;
+	padding: 15px 20px;
 }
 .r_content_box{
 	float: right;
@@ -174,4 +175,29 @@ body{
 .input_name{
 	width:100px;
 	height:22px;
+}
+
+.l_menu_list div{
+	padding: 0 20px;
+	height: 49px;
+	line-height: 49px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.l_menu_list div:hover{
+	background-color: #efefef;
+	height: 51px;
+	line-height: 51px;
+	position: relative;
+}
+
+.l_menu_list .selected{
+	background-color: #efefef;
+	height: 51px;
+	line-height: 51px;
+	position: relative;
 }
