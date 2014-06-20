@@ -62,7 +62,7 @@
 	height: 38px;
 	line-height: 40px;
 	clear: both;
-	background-color: #f0f0ef;
+	background-color: #edde8b;
 	margin: 10px auto 0;
 	width: 700px;
 	padding-top: 3px;
@@ -70,7 +70,7 @@
 .jobTypeTab{
 	float: left;
 	display: inline;
-	border: 1px solid #f0f0ef;
+	border: 1px solid #edde8b;
 	border-bottom-width: 0;
 	height: 37px;
 	line-height: 34px;
@@ -151,4 +151,9 @@ table.t_value th {
 	width: 330px;
 	padding: 10px;
 	color: #333333;
+}
+
+#userinfo .info{
+	margin-left:20px;
+	margin-bottom: 10px;
 }

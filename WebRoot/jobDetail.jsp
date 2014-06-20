@@ -9,6 +9,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>见人网,见人就在这里</title>
+	<link rel="shortcut icon" href="favicon.ico" />
 
 	<link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/pages.css">
@@ -21,7 +23,6 @@
     <script type="text/javascript" src="jslib/json2.js"></script>
 	
     <script type="text/javascript" src="js/util.js"></script>
-	<title>网络小口袋</title>
 </head>
 
 <%
@@ -62,7 +63,7 @@ if(accountid == "null") {
    		
    		<!-- jobListBox -->
    		<div class="jobRowLeft">
-			<img src="http://q.qlogo.cn/qqapp/101016468/EEF8E24835329D1A33C5900E5F5A471F/100" width="50" class="icon" alt="lemon">
+			<img src="images/prof_img2.jpg" width="50" class="icon" alt="lemon">
 		</div>
 		<div class="jobRowRight">
 			<div class="title"><span class="perName"><%=job.getPublisherName() %></span>&nbsp;发布了&nbsp;<span class="jobName"><%=job.getPosition() %></span></div>

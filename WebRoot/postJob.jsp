@@ -5,6 +5,8 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>见人网,见人就在这里</title>
+	<link rel="shortcut icon" href="favicon.ico" />
 
 	<link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/pages.css">
@@ -18,7 +20,6 @@
 	
     <script type="text/javascript" src="js/util.js"></script>
 	<script type="text/javascript" src="js/postjob.js"></script>	
-	<title>网络小口袋</title>
 </head>
 
 <%

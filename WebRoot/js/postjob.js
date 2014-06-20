@@ -11,6 +11,8 @@ $(document).ready(function(){
 		jobdata = getFormdata(paramlist);
 		var func = function(data){
 			console.log(data);
+			data = JSON.parse(data);
+			location.href="jobDetail.jsp?jobid="+data.id;
 		};
 		Jobdwr.saveJob(jobdata,func);
 	}
