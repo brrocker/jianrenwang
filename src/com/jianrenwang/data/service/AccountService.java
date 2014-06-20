@@ -85,6 +85,7 @@ public class AccountService {
 			return j.toString();
 		}
 		account.setPassword(MD5.compute(account.getPassword()));
+		account.setShowname(name);
 
 		if (accountDao.saveAccount(account)) {
 			j.put("result", true);

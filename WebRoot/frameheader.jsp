@@ -12,7 +12,7 @@
         <!--options end-->
         
         <div class="top-nav-profile">
-			<a href="#" class="top-nav-userinfo" id="">
+			<a href="myPostedJob.jsp" class="top-nav-userinfo" id="">
 				<span class="name">肖奕</span>
 				<img class="profile_image" src="images/profile_image.jpg">
 			</a>
