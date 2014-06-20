@@ -1,10 +1,25 @@
-function checkFileds(){
+function checkNumbers(intArr){
 	//对输入进行正则校验
 	//校验大于0的整数
-	var workage = $("input[name='workage']").val();
-	var salary = $("#salary").val();
-	var numPattern=/^[1-9]{1}[0-9]*$/;
-	return numPattern.test(workage) && numPattern.test(salary);
+	var numPattern=/^[0-9]*$/;
+	for( i in intArr){
+		if(!numPattern.test(intArr[i])){
+			return false;
+		}
+	}
+	return true;
+}
+
+function checkChoosed(strArr){
+	//对输入进行正则校验
+	//校验大于0的整数
+	var strPattern="请选择";
+	for( i in strArr){
+		if(strPattern == strArr[i]){
+			return false;
+		}
+	}
+	return true;
 }
 
 $(document).ready(function(){
@@ -26,10 +41,6 @@ $(document).ready(function(){
 		var text = $(this).html();
 		var titileDiv = $(this).parent().parent().parent().find(".ds_title");
 		titileDiv.html(text);
-		var defaultText = $(this).parent().find("p").html();
-		if(text == defaultText){
-			text = "";
-		}
 		titileDiv.attr("value",text);
 	});
 	

@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@page import="com.jianrenwang.commonservice.Constants"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<%String userName = (String) session
+.getAttribute(Constants.SESSION_NAME); %>
 <div id="header_box">
 	<div id="header">
     	<!-- menu options-->
@@ -13,7 +14,7 @@
         
         <div class="top-nav-profile">
 			<a href="myPostedJob.jsp" class="top-nav-userinfo" id="">
-				<span class="name">肖奕</span>
+				<span class="name"><%=userName %></span>
 				<img class="profile_image" src="images/profile_image.jpg">
 			</a>
 			<ul class="top-nav-dropdown" id="top-nav-profile-dropdown">

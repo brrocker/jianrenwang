@@ -20,9 +20,10 @@ public class Resume {
 	private String interestcitys="";
 	private String interestjobs="";
 	private String privatestatus="";
-	private String portfolio="";
+	private String hobbies="";
 	private String gam="";
 	private int salary=0;
+	private String mailSubscription="";
 	
 	@Id
 	@Column(length = 32)
@@ -110,12 +111,6 @@ public class Resume {
 	public void setPrivatestatus(String privatestatus) {
 		this.privatestatus = privatestatus;
 	}
-	public String getPortfolio() {
-		return portfolio;
-	}
-	public void setPortfolio(String portfolio) {
-		this.portfolio = portfolio;
-	}
 	public String getGam() {
 		return gam;
 	}
@@ -127,6 +122,18 @@ public class Resume {
 	}
 	public void setSalary(int salary) {
 		this.salary = salary;
+	}
+	public String getHobbies() {
+		return hobbies;
+	}
+	public void setHobbies(String hobbies) {
+		this.hobbies = hobbies;
+	}
+	public String getMailSubscription() {
+		return mailSubscription;
+	}
+	public void setMailSubscription(String mailSubscription) {
+		this.mailSubscription = mailSubscription;
 	}
 	
 }

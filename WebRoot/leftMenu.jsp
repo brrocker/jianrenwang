@@ -21,7 +21,7 @@
 				<a href="#">已收简历</a>
 			</div>
 			<div id="resume">
-				<a href="#" id="li_one">更新简历</a>
+				<a href="myResume.jsp" id="li_one">更新简历</a>
 			</div>
 			<div id="message">
 				<a href="#" id="link_allmessage">消息中心</a>

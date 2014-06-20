@@ -4,10 +4,6 @@
 $(document).ready(function(){
 	function updateResume(){
 		console.log("update resume");
-		if(!checkFileds()){
-			alert("输入有误");
-			return
-		}
 		//check each field
 		//姓       名
 		var realName = $("#realname").val();
@@ -36,8 +32,8 @@ $(document).ready(function(){
 		var privatestatus = $("#privatestatus").attr("value");
 		
 		//-----------(can be null)
-		//作品地址
-		var portfolio = $("#portfolio").val();
+		//业余爱好
+		var hobbies = $("#hobbies").val();
 		
 		//社交账号
 		var gam_type = $("#gam_div_0 .ds_title").attr("value");
@@ -46,7 +42,17 @@ $(document).ready(function(){
 		
 		//salary 期望月薪
 		var salary = $("#salary").val();
-		
+		//是否订阅
+		var mailSubscription = $("#mailSubscription").val();
+		if(!checkNumbers([mobile,birthyear,workage,salary])){
+			alert("输入整数");
+			return
+		}
+		//checkChoosed
+		if(!checkChoosed([privatestatus,education_div_0,mailSubscription])){
+			alert("请选择");
+			return
+		}
 		resume = {
 			realName:realName,
 			mobile:mobile,
@@ -61,13 +67,18 @@ $(document).ready(function(){
 			interestcitys:interestcitys,
 			interestjobs:interestjobs,
 			privatestatus:privatestatus,
-			portfolio:portfolio,
+			hobbies:hobbies,
 			gam:gam,
 			salary:salary,
+			mailSubscription:mailSubscription,
 		};
 		
 		var func = function(data){
 			console.log("update resume result" + data);
+			console.log("update resume result" + JSON.parse(data)["result"]);
+			if(JSON.parse(data)["result"]==true){
+				window.location.href = "myResume.jsp";
+			}
 		};
 		Resume.saveResume(resume,func);
 	}

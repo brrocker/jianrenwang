@@ -36,19 +36,20 @@
 			.getAttribute(Constants.SESSION_ID);
 	String userName = (String) session
 			.getAttribute(Constants.SESSION_NAME);
-	if(null==accountID || "".equals(accountID)){
+	if (null == accountID || "".equals(accountID)) {
 %>
 <script type="text/javascript">
-window.location.href = "index.jsp";
+	window.location.href = "index.jsp";
 </script>
 <%
-return;
-}
-ApplicationContext ctx = WebApplicationContextUtils
-.getRequiredWebApplicationContext(this.getServletConfig()
-		.getServletContext());
-ResumeService resumeService = (ResumeService) ctx.getBean("resumeService");
-Resume resume = resumeService.getResumeByAccountID(accountID);
+	return;
+	}
+	ApplicationContext ctx = WebApplicationContextUtils
+			.getRequiredWebApplicationContext(this.getServletConfig()
+					.getServletContext());
+	ResumeService resumeService = (ResumeService) ctx
+			.getBean("resumeService");
+	Resume resume = resumeService.getResumeByAccountID(accountID);
 %>
 </head>
 <body>
@@ -60,7 +61,8 @@ Resume resume = resumeService.getResumeByAccountID(accountID);
 			<div class="edit_mid_container">
 
 				<h2>
-					<%=userName %> &nbsp&nbsp&nbsp<span class="tips"
+					<%=userName%>
+					&nbsp&nbsp&nbsp<span class="tips"
 						style="background-position: 30px -491px; color: #52b848;">更新在线简历，让其他见人发现你。</span>
 				</h2>
 
@@ -77,19 +79,21 @@ Resume resume = resumeService.getResumeByAccountID(accountID);
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</label>
 									<input id="realname" class="w328 required inp valid"
-										type="text" name="realname" value="<%=resume.getRealName() %>" message="姓名由文字字母组成" /><span
-										class="online_resume_tips"
+										type="text" name="realname" value="<%=resume.getRealName()%>"
+										message="姓名由文字字母组成" /><span class="online_resume_tips"
 										style="width: 337px; left: 105px; display: none">姓名由文字字母组成</span>
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</label>
 									<input id="mobile" class="w328 required mobile inp" type="text"
-										name="mobile" value="<%=resume.getMobile() %>" message="请输入正确的手机号" />
+										name="mobile" value="<%=resume.getMobile()%>"
+										message="请输入正确的手机号" />
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
 									<input id="email" class="w328 required email inp" type="text"
-										name="email" value="<%=resume.getEmail() %>" message="请输入正确的邮箱" />
+										name="email" value="<%=resume.getEmail()%>"
+										message="请输入正确的邮箱" />
 								</div>
 								<div class="online_resume_item"
 									style="z-index: 100; position: relative;">
@@ -97,7 +101,14 @@ Resume resume = resumeService.getResumeByAccountID(accountID);
 									<div id="ageDiv" class="selectView selectView_mini"
 										style="width: 350px; position: absolute; left: 105px; top: 0px;">
 										<div class="ds_cont">
-											<div class="ds_title" value="<%=resume.getBirthyear() %>"><%=resume.getBirthyear() %></div>
+										<%
+										String birthyearStr = "请选择";
+										int birthyearInt = resume.getBirthyear();
+										if(birthyearInt!=0){
+											birthyearStr = "" + birthyearInt;
+										}
+										%>
+											<div class="ds_title" value="<%=birthyearStr%>"><%=birthyearStr%></div>
 											<div class="ds_button"></div>
 										</div>
 										<div class="ds_list" style="display: none;">
@@ -177,24 +188,26 @@ Resume resume = resumeService.getResumeByAccountID(accountID);
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>当前公司</label> <input
 										id="" class="w200 required inp" type="text"
-										name="currentcompany" value="<%=resume.getCurrentcompany() %>" message="不能为空，学生填当前学校" />
+										name="currentcompany" value="<%=resume.getCurrentcompany()%>"
+										message="不能为空，学生填当前学校" />
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>工作年限</label> <input
 										id="" class="w200 required number inp" type="text"
-										name="workage" value="<%=resume.getWorkage() %>" message="工作年限不能为空，学生填0" />
+										name="workage" value="<%=resume.getWorkage()%>"
+										message="工作年限不能为空，学生填0" />
 								</div>
 							</div>
 							<div class="online_resume_cont_r w_half">
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>当前职位</label> <input
 										id="" class="w200 required inp" type="text" name="currentjob"
-										value="<%=resume.getCurrentjob() %>" message="不能为空，学生填学生" />
+										value="<%=resume.getCurrentjob()%>" message="不能为空，学生填学生" />
 								</div>
 								<div class="online_resume_item">
 									<label for=""><span class="necessary">*</span>所在城市</label> <input
 										id="" class="w200 required inp" type="text" name="city"
-										value="<%=resume.getCity() %>" message="所在城市不能为空" />
+										value="<%=resume.getCity()%>" message="所在城市不能为空" />
 								</div>
 							</div>
 						</div>
@@ -214,7 +227,8 @@ Resume resume = resumeService.getResumeByAccountID(accountID);
 										class="nt_rich_editor_operation nt_rich_editor_add_bullets">添加项目符号</a>
 								</div>
 								<textarea id="experience" name="experience"
-									class="nt_rich_editor_content inp" value="<%=resume.getExperience() %>"><%=resume.getExperience() %></textarea>
+									class="nt_rich_editor_content inp"
+									value="<%=resume.getExperience()%>"><%=resume.getExperience()%></textarea>
 							</div>
 							<!-- <script id="editor" type="text/plain" style="width:672px;height:300px;"></script> -->
 							<!-- <textarea id="editorContent" name="experience" style="display:none;"></textarea> -->
@@ -251,16 +265,16 @@ Resume resume = resumeService.getResumeByAccountID(accountID);
 									<!--                  -->
 									<div id="education_div_0" class="selectView selectView_mini"
 										style="width: 130px; position: absolute; left: 0px; top: 0px;">
-										
-<%
-String eduArr[] = {"请选择","",""};
-String edu = resume.getEducation();
-if(!"".equals(edu)){
-	eduArr = edu.split(",",-1);
-}
-%>
+
+										<%
+											String eduArr[] = { "请选择", "", "" };
+											String edu = resume.getEducation();
+											if (!"".equals(edu)) {
+												eduArr = edu.split(",", -1);
+											}
+										%>
 										<div class="ds_cont">
-											<div class="ds_title" value="<%=eduArr[0] %>"><%=eduArr[0] %></div>
+											<div class="ds_title" value="<%=eduArr[0]%>"><%=eduArr[0]%></div>
 											<div class="ds_button"></div>
 										</div>
 										<div class="ds_list" style="display: none;">
@@ -274,10 +288,10 @@ if(!"".equals(edu)){
 											</div>
 										</div>
 									</div>
-									<input type="text" placeholder="学校" value="<%=eduArr[1] %>"
+									<input type="text" placeholder="学校" value="<%=eduArr[1]%>"
 										class="w222 required inp" id="education_school0"
 										name="education[0][school]" message="学校不能为空" /> <input
-										type="text" placeholder="专业" value="<%=eduArr[2] %>"
+										type="text" placeholder="专业" value="<%=eduArr[2]%>"
 										class="w222 required inp" id="education_major0"
 										name="education[0][major]" message="专业不能为空" />
 								</div>
@@ -285,71 +299,7 @@ if(!"".equals(edu)){
 						</div>
 					</div>
 					<!-- ./Education information -->
-					<!-- Attach information -->
-					<div class="online_resume_blk online_resume_attach">
-						<div class="online_resume_tit clearfix">
-							<h3>&nbsp;&nbsp;&nbsp;附加信息</h3>
-						</div>
-						<div class="online_resume_cont clearfix" id="gam">
-							<div class="online_resume_item clearfix">
-								<label for="portfolio" class="online_resume_border">作品集地址</label>
-								<input id="portfolio" class="w512 inp" type="text"
-									name="portfolio" value="<%=resume.getPortfolio() %>" placeholder="选填" autocomplete="off" />
-							</div>
-							<div class="online_resume_blank blank"></div>
-							<div class="online_resume_list">
-								<!--                  -->
-								<div class="online_resume_item online_resume_gam clearfix"
-									index="0" style="z-index: 800; position: relative;">
-									<select class="online_resume_select" name="social[0][type]"
-										id="gam_0" style="visibility: hidden;">
-										<option value="" selected="">社交账号</option>
-										<option value="个人博客" class="status个人博客">个人博客</option>
-										<option value="Github" class="statusGithub">Github</option>
-										<option value="微博" class="status微博">微博</option>
-										<option value="知乎" class="status知乎">知乎</option>
-										<option value="Lofter" class="statusLofter">Lofter</option>
-										<option value="站酷" class="status站酷">站酷</option>
-										<option value="其他" class="status其他">其他</option>
-<%
-String gamArr[] = {"社交账号",""};
-String gam = resume.getGam();
-if(!"".equals(gam)){
-	gamArr = gam.split(",",-1);
-}
-%>
-									</select> <input type="text" placeholder="如：www.weibo.com/uid=24354646"
-										value="<%=gamArr[1]%>" class="w512 inp" id="" name="social[0][info]"
-										autocomplete="off" />
-									<!--                        -->
-									<a class="online_resume_cancel" href="javascript:void(0)"
-										onclick="jianren_resume_removeeducation(this, 4, 'gam', '删除社交账号')"
-										style="display: none"></a>
-									<!--                    -->
-									<div id="gam_div_0" class="selectView selectView_mini"
-										style="width: 130px; position: absolute; left: 0px; top: 0px;">
-										<div class="ds_cont">
-											<div class="ds_title" value="<%=gamArr[0]%>"><%=gamArr[0]%></div>
-											<div class="ds_button"></div>
-										</div>
-										<div class="ds_list" style="display: none;">
-											<div class="dsl_cont">
-												<p>社交账号</p>
-												<p>个人博客</p>
-												<p>Github</p>
-												<p>微博</p>
-												<p>知乎</p>
-												<p>Lofter</p>
-												<p>站酷</p>
-												<p>其他</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- ./Attach information -->
+
 					<!-- Occupation intention -->
 					<div class="online_resume_blk">
 						<div class="online_resume_tit clearfix">
@@ -359,7 +309,8 @@ if(!"".equals(gam)){
 							<div class="online_resume_item" func="withlayer">
 								<label for=""><span class="necessary">*</span>目标城市</label> <input
 									id="interestcitys" class="w548 required inp" type="text"
-									name="interestcitys" value="<%=resume.getInterestcitys() %>" message="请填写目标城市" />
+									name="interestcitys" value="<%=resume.getInterestcitys()%>"
+									message="请填写目标城市" />
 								<div class="online_resume_layer" style="display: none">
 									<a href="javascript:;" class="online_resume_closer">×</a>
 									<ul class="clearfix" for="interestcitys">
@@ -378,7 +329,8 @@ if(!"".equals(gam)){
 							<div class="online_resume_item" func="withlayer">
 								<label for=""><span class="necessary">*</span>目标职位</label> <input
 									id="interestjobs" class="w548 required inp" type="text"
-									name="interestjobs" value="<%=resume.getInterestjobs() %>" message="目标职位不能为空" />
+									name="interestjobs" value="<%=resume.getInterestjobs()%>"
+									message="目标职位不能为空" />
 								<div class="online_resume_layer" style="display: none">
 									<a href="javascript:;" class="online_resume_closer">×</a>
 									<ul class="forjobs clearfix" for="interestjobs">
@@ -413,13 +365,111 @@ if(!"".equals(gam)){
 							<div class="online_resume_item clearfix">
 								<div class="online_resume_item_l">
 									<label for="">&nbsp;&nbsp;&nbsp;期望月薪</label> <input id="salary"
-										class="w40 inp" type="text" name="salary" value="<%=resume.getSalary() %>"
-										style="text-align: right" /> <span>k</span>
+										class="w40 inp" type="text" name="salary"
+										value="<%=resume.getSalary()%>" style="text-align: right" />
+									<span>k</span>
+								</div>
+								<div class="online_resume_item_r"
+									style="position: relative; z-index: 10000;">
+									<label for="" style="width: auto"><span
+										class="necessary">*</span>是否邮件订阅目标职位</label> <select
+										class="online_resume_select required" name="issubscribe"
+										message="选择是否订阅邮件"
+										style="visibility: hidden;">
+										<option value="">请选择</option>
+										<option value="0" class="status0">否</option>
+										<option value="1" class="status1">是</option>
+
+									</select>
+									<div class="selectView selectView_mini"
+										style="width: 130px; position: absolute; left: 177px; top: 0px;">
+										<div class="ds_cont">
+										<%
+											String mailSubscription = resume.getMailSubscription();
+											if ("".equals(mailSubscription)) {
+												mailSubscription = "请选择";
+											}
+										%>
+											<div id="mailSubscription" class="ds_title"><%=mailSubscription %></div>
+											<div class="ds_button"></div>
+										</div>
+										<div class="ds_list" style="display: none;">
+											<div class="dsl_cont">
+												<p>请选择</p>
+												<p>否</p>
+												<p>是</p>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- ./Occupation intention -->
+					<!-- Attach information -->
+					<div class="online_resume_blk online_resume_attach">
+						<div class="online_resume_tit clearfix">
+							<h3>&nbsp;&nbsp;&nbsp;附加信息</h3>
+						</div>
+						<div class="online_resume_cont clearfix" id="gam">
+							<div class="online_resume_item clearfix">
+								<label for="hobbies" class="online_resume_border">业余爱好</label>
+								<input id="hobbies" class="w512 inp" type="text"
+									name="hobbies" value="<%=resume.getHobbies()%>"
+									placeholder="选填" autocomplete="off" />
+							</div>
+							<div class="online_resume_blank blank"></div>
+							<div class="online_resume_list">
+								<!--                  -->
+								<div class="online_resume_item online_resume_gam clearfix"
+									index="0" style="z-index: 800; position: relative;">
+									<select class="online_resume_select" name="social[0][type]"
+										id="gam_0" style="visibility: hidden;">
+										<option value="" selected="">社交账号</option>
+										<option value="个人博客" class="status个人博客">个人博客</option>
+										<option value="微博" class="status微博">微博</option>
+										<option value="知乎" class="status知乎">知乎</option>
+										<option value="Lofter" class="statusLofter">Lofter</option>
+										<option value="站酷" class="status站酷">站酷</option>
+										<option value="其他" class="status其他">其他</option>
+										<%
+											String gamArr[] = { "社交账号", "" };
+											String gam = resume.getGam();
+											if (!"".equals(gam)) {
+												gamArr = gam.split(",", -1);
+											}
+										%>
+									</select> <input type="text" placeholder="如：www.weibo.com/uid=24354646"
+										value="<%=gamArr[1]%>" class="w512 inp" id=""
+										name="social[0][info]" autocomplete="off" />
+									<!--                        -->
+									<a class="online_resume_cancel" href="javascript:void(0)"
+										onclick="jianren_resume_removeeducation(this, 4, 'gam', '删除社交账号')"
+										style="display: none"></a>
+									<!--                    -->
+									<div id="gam_div_0" class="selectView selectView_mini"
+										style="width: 130px; position: absolute; left: 0px; top: 0px;">
+										<div class="ds_cont">
+											<div class="ds_title" value="<%=gamArr[0]%>"><%=gamArr[0]%></div>
+											<div class="ds_button"></div>
+										</div>
+										<div class="ds_list" style="display: none;">
+											<div class="dsl_cont">
+												<p>社交账号</p>
+												<p>个人博客</p>
+												<p>微博</p>
+												<p>知乎</p>
+												<p>Lofter</p>
+												<p>站酷</p>
+												<p>其他</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ./Attach information -->
 					<div class="resume_spe_line"></div>
 					<!-- Privacy settings -->
 					<div class="online_resume_blk online_resume_privacy">
@@ -430,8 +480,7 @@ if(!"".equals(gam)){
 							<div class="online_resume_item"
 								style="z-index: 100; position: relative;">
 								<label for="" class="w100"><span class="necessary">*</span>简历隐私状态</label>
-								<select
-									class="online_resume_select required"
+								<select class="online_resume_select required"
 									style="width: 174px; visibility: hidden;" message="选择简历隐私状态">
 									<option value="" selected="">请选择</option>
 									<option value="0" class="status0">观望中</option>
@@ -442,7 +491,14 @@ if(!"".equals(gam)){
 								<div class="selectView selectView_mini"
 									style="width: 174px; position: absolute; left: 125px; top: 0px;">
 									<div class="ds_cont">
-										<div id="privatestatus" class="ds_title" value="<%=resume.getPrivatestatus() %>"><%=resume.getPrivatestatus() %></div>
+									<%
+											String privatestatus = resume.getPrivatestatus();
+											if ("".equals(privatestatus)) {
+												privatestatus = "请选择";
+											}
+										%>
+										<div id="privatestatus" class="ds_title"
+											value="<%=privatestatus %>"><%=privatestatus %></div>
 										<div class="ds_button"></div>
 									</div>
 									<div class="ds_list" style="display: none;">
