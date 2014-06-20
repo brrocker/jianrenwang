@@ -2,36 +2,30 @@ package com.jianrenwang.data.pojo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Resume {
 	private String id;
-	private String realName;
-	private String mobile;
-	private String email;
+	private String realName="";
+	private String mobile="";
+	private String email="";
 	private int birthyear;
-	private String currentcompany;
-	private String currentjob;
-	private int workage;
-	private String city;
-	private String experience;
-	private String education;
-	private String interestcitys;
-	private String interestjobs;
-	private String privatestatus;
-	private String portfolio;
-	private String gam;
-	private int salary;
-	private String accountID = "";
+	private String currentcompany="";
+	private String currentjob="";
+	private int workage=0;
+	private String city="";
+	private String experience="";
+	private String education="";
+	private String interestcitys="";
+	private String interestjobs="";
+	private String privatestatus="";
+	private String portfolio="";
+	private String gam="";
+	private int salary=0;
 	
 	@Id
 	@Column(length = 32)
-	@GeneratedValue(generator = "system-uuid")
-	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	public String getId() {
 		return id;
 	}
@@ -133,12 +127,6 @@ public class Resume {
 	}
 	public void setSalary(int salary) {
 		this.salary = salary;
-	}
-	public String getAccountID() {
-		return accountID;
-	}
-	public void setAccountID(String accountID) {
-		this.accountID = accountID;
 	}
 	
 }
