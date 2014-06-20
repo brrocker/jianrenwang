@@ -58,7 +58,7 @@ $(document).ready(function(){
 				var job = data[i];
 				var html = 
 					'<div class="jobRow"><div class="jobRowLeft">' +
-							'<img src="http://q.qlogo.cn/qqapp/101016468/EEF8E24835329D1A33C5900E5F5A471F/100" width="50" class="icon" alt="lemon"></div>' +
+							'<img src="images/prof_img2.jpg" width="50" class="icon" alt="lemon"></div>' +
    				'<div class="jobRowRight">'+
    					'<div class="title"><span class="perName">'+
    					job.publisherName + '</a></span>&nbsp;发布了&nbsp;<span class="jobName"><a href="jobDetail.jsp?jobid='+job.id +'" target="blank">'+

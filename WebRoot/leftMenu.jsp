@@ -8,7 +8,7 @@
 			<div class="img">
 				<a 我的有奖推荐="" href="/u/82006"> <img width="80" height="80"
 					alt="xy" class="icon"
-					src="http://q.qlogo.cn/qqapp/101016468/B9F88A6D4CB9C26E67998CE835DBDCEE/100">
+					src="images/prof_img.jpg">
 				</a>
 				<span>xy</span>
 			</div>

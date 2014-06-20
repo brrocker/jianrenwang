@@ -6,8 +6,8 @@
 <div id="header_box">
 	<div id="header">
     	<!-- menu options-->
-        <div class="menu_item"><a href="main.jsp">首页</a></div>
-        <div class="menu_item"><a href="postJob.jsp">发布职位</a></div>
+        <a href="main.jsp"><div class="menu_item">首页</div></a>
+        <a href="postJob.jsp"><div class="menu_item">发布职位</div></a>
         <div class="menu_item">搜索简历</div>
         <!--options end-->
         
