@@ -82,24 +82,23 @@ a{
 .btn_sty1{
 	background: #8ab923;
 	background-color: #9dcc4a;
-	background-image: -moz-linear-gradient(top,#adda4d,#86b846);
-	background-image: -ms-linear-gradient(top,#adda4d,#86b846);
-	background-image: -webkit-gradient(linear,0 0,0 100%,from(#adda4d),to(#86b846));
-	background-image: -webkit-linear-gradient(top,#adda4d,#86b846);
-	background-image: -o-linear-gradient(top,#adda4d,#86b846);
-	background-image: linear-gradient(top,#adda4d,#86b846);
+	background-image: -moz-linear-gradient(top,#FCB136,#f39800);
+	background-image: -ms-linear-gradient(top,#FCB136,#f39800);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#FCB136),to(#f39800));
+	background-image: -webkit-linear-gradient(top,#FCB136,#f39800);
+	background-image: -o-linear-gradient(top,#FCB136,#f39800);
+	background-image: linear-gradient(top,#FCB136,#f39800);
 	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#adda4d', endColorstr='#86b846', GradientType=0);
-	text-shadow: 0 1px 0 rgba(255,255,255,.3);
-	border: 1px solid #6d8f29;
-	color: #3e5e00!important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCB136', endColorstr='#f39800', GradientType=0);
+	border: 1px solid #e79101;
+	color: #fff!important;
 	min-width: 78px;
 	width: auto;
 	_width: 78px;
 	box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,0 1px 0 rgba(0,0,0,.2);
 	text-align: center;
 	min-width: 90px;
-	font-size: 12px;
+	font-size: 14px;
 	text-decoration: none!important;
 	padding: 1px;
 	font-weight: 400;
@@ -110,20 +109,21 @@ a{
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
+	font-family: "Microsoft Yahei","SimSun";
 }
 
 .btn_sty1:hover{
-	background-image: -webkit-linear-gradient(top,#D0F387,#98C959);
+	background-image: -webkit-linear-gradient(top,#FAC877,#F7AC2F);
 }
 
 .btn_search {
 	text-align: center;
 	min-width: 90px;
-	font-size: 12px;
+	font-size: 17px;
 	text-decoration: none!important;
 	padding: 1px;
 	font-weight: 400;
-	line-height: 28px;
+	line-height: 32px;
 	border-radius: 3px;
 	cursor: pointer;
 	-webkit-box-sizing: border-box;
